@@ -2,3 +2,14 @@ Grupo:
     - Igor Batista
     - Rayanne Rayssa
     - Vinícius Aranda Lima da Silva
+
+Referências:
+Sessão 5.2 até 5.5 do Pandas: https://panda.ime.usp.br/pythonds/static/pythonds_pt/05-OrdenacaoBusca/Hashing.html
+criação e análise de gráficos: https://colab.research.google.com/drive/1QNMZWmqBxk109P_FnwwWwYcBCRcjBEFt?usp=sharing
+
+Dificuldades:
+tivemos dificuldades em testar com os volumes de registros propostos, então reduzimos a escala para 1/1000, dessa maneira conseguimos realizar os testes e estimar com base em informações resgatadas no pandas o comportamento do algoritimo com volumes maióres de dados. 
+
+Conclusões: Após analizarmos os gráficos em 4 gerações aleatórias diferentes descobrimos que além do volume de dados outro fator muito importante é o nivel de carga das informações, que determina o quão difícil será de lidar com colisões, em alguns casos a tabela hash agiu de maneira rápuda para busca  de dados já em outros ela demorou consideravelmente mais devido o numero de colisões que ocorreram naquera geração.
+
+Melhorias no código: Seria ideal a implementação de uma função de espalhamento mais eficiente e inteligente, uma vez que se a função for bem estruturada o metodo de tabela hash se provou o mais escalável e adaptativo segundo conclusões que tiramos, com base no matérial estudado e testes feitos.
