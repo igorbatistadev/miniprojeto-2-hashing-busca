@@ -9,7 +9,16 @@ import random
 gerador = GeradorPessoa()   
 qtd_conjunto_1 = 10
 qtd_conjunto_2 = 100
-qtd_conjunto_3 = 100
+qtd_conjunto_3 = 1000
+
+hash_table_tempo_insercao = [None, None, None] 
+hash_table_tempo_busca = [None, None, None] 
+
+lista_ordenada_tempo_insercao = [None, None, None] 
+lista_ordenada_tempo_busca = [None, None, None] 
+
+lista_nao_ordenada_tempo_insercao = [None, None, None] 
+lista_nao_ordenada_tempo_busca = [None, None, None] 
 
 def gerarCpf():
     return f'{random.randint(100000000, 999999999)}'
@@ -103,75 +112,93 @@ def testeTempoInsercao():
     tempo = timeit.timeit( stmt=testeInsercaoListaOrdenadaConjunt1, number=1)
     print(f'Tempo de duração do testeInsercaoListaOrdenadaConjunt1: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_1}')
+    lista_ordenada_tempo_insercao[0] = tempo/qtd_conjunto_1
 
     tempo = timeit.timeit( stmt=testeInsercaoListaOrdenadaConjunt2, number=1)
     print(f'Tempo de duração do testeInsercaoListaOrdenadaConjunt2: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_2}')
+    lista_ordenada_tempo_insercao[1] = tempo/qtd_conjunto_2
 
     tempo = timeit.timeit( stmt=testeInsercaoListaOrdenadaConjunt3, number=1)
     print(f'Tempo de duração do testeInsercaoListaOrdenadaConjunt3: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_3}')
+    lista_ordenada_tempo_insercao[2] = tempo/qtd_conjunto_3
 
     tempo = timeit.timeit( stmt=testeInsercaoListaNaoOrdenadaConjunt1, number=1)
     print(f'Tempo de duração do testeInsercaoListaNaoOrdenadaConjunt1: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_1}')
+    lista_nao_ordenada_tempo_insercao[0] = tempo/qtd_conjunto_1
         
     tempo = timeit.timeit( stmt=testeInsercaoListaNaoOrdenadaConjunt2, number=1)
     print(f'Tempo de duração do testeInsercaoListaNaoOrdenadaConjunt2: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_2}')
+    lista_nao_ordenada_tempo_insercao[1] = tempo/qtd_conjunto_2
 
     tempo = timeit.timeit( stmt=testeInsercaoListaNaoOrdenadaConjunt3, number=1)
     print(f'Tempo de duração do testeInsercaoListaNaoOrdenadaConjunt3: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_3}')
+    lista_nao_ordenada_tempo_insercao[2] = tempo/qtd_conjunto_3
 
     tempo = timeit.timeit( stmt=testeInsercaoHashTableConjunt1, number=1)
     print(f'Tempo de duração do testeInsercaoHashTableConjunt1: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_1}')
+    hash_table_tempo_insercao[0] = tempo/qtd_conjunto_1
         
     tempo = timeit.timeit( stmt=testeInsercaoHashTableConjunt2, number=1)
     print(f'Tempo de duração do testeInsercaoHashTableConjunt2: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_2}')
+    hash_table_tempo_insercao[1] = tempo/qtd_conjunto_2
 
     tempo = timeit.timeit( stmt=testeInsercaoHashTableConjunt3, number=1)
     print(f'Tempo de duração do testeInsercaoHashTableConjunt3: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_3}')
+    hash_table_tempo_insercao[2] = tempo/qtd_conjunto_3
     
 def testeTempoBusca():
     tempo = timeit.timeit( stmt=testeBuscaListaOrdenadaConjunt1, number=1)
     print(f'Tempo de duração do testeBuscaListaOrdenadaConjunt1: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_1}')
+    lista_ordenada_tempo_busca[0] = tempo/qtd_conjunto_1
 
     tempo = timeit.timeit( stmt=testeBuscaListaOrdenadaConjunt2, number=1)
     print(f'Tempo de duração do testeBuscaListaOrdenadaConjunt2: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_2}')
+    lista_ordenada_tempo_busca[1] = tempo/qtd_conjunto_2
 
     tempo = timeit.timeit( stmt=testeBuscaListaOrdenadaConjunt3, number=1)
     print(f'Tempo de duração do testeBuscaListaOrdenadaConjunt3: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_3}')
+    lista_ordenada_tempo_busca[2] = tempo/qtd_conjunto_3
 
     tempo = timeit.timeit( stmt=testeBuscaListaNaoOrdenadaConjunt1, number=1)
     print(f'Tempo de duração do testeBuscaListaNaoOrdenadaConjunt1: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_1}')
+    lista_nao_ordenada_tempo_busca[0] = tempo/qtd_conjunto_1
         
     tempo = timeit.timeit( stmt=testeBuscaListaNaoOrdenadaConjunt2, number=1)
     print(f'Tempo de duração do testeBuscaListaNaoOrdenadaConjunt2: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_2}')
+    lista_nao_ordenada_tempo_busca[1] = tempo/qtd_conjunto_2
 
     tempo = timeit.timeit( stmt=testeBuscaListaNaoOrdenadaConjunt3, number=1)
     print(f'Tempo de duração do testeBuscaListaNaoOrdenadaConjunt3: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_3}')
+    lista_nao_ordenada_tempo_busca[2] = tempo/qtd_conjunto_3
     
     tempo = timeit.timeit( stmt=testeBuscaHashTableConjunt1, number=1)
     print(f'Tempo de duração do testeBuscaHashTableConjunt1: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_1}')
+    hash_table_tempo_busca[0] = tempo/qtd_conjunto_1
     
     tempo = timeit.timeit( stmt=testeBuscaHashTableConjunt2, number=1)
     print(f'Tempo de duração do testeBuscaHashTableConjunt2: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_2}')
+    hash_table_tempo_busca[1] = tempo/qtd_conjunto_2
     
     tempo = timeit.timeit( stmt=testeBuscaHashTableConjunt3, number=1)
     print(f'Tempo de duração do testeBuscaHashTableConjunt3: {tempo}')
     print(f'Tempo médio: {tempo/qtd_conjunto_3}')
+    hash_table_tempo_busca[2] = tempo/qtd_conjunto_3
 
 if __name__ == '__main__':
     pessoa = gerarPessoa()
@@ -189,4 +216,14 @@ if __name__ == '__main__':
     
     testeTempoInsercao()
     testeTempoBusca()
+    
+    print('hash_table_tempo_insercao =', hash_table_tempo_insercao)
+    print('hash_table_tempo_busca =', hash_table_tempo_busca)
+    
+    print('lista_ordenada_tempo_insercao =', lista_ordenada_tempo_insercao)
+    print('lista_ordenada_tempo_buca =', lista_ordenada_tempo_busca)
+    
+    print('lista_nao_ordenada_tempo_insercao =', lista_nao_ordenada_tempo_insercao)
+    print('lista_nao_ordenada_tempo_busca =', lista_nao_ordenada_tempo_busca)
+    
 
